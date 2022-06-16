@@ -26,17 +26,20 @@ public class UserController extends HttpServlet {
 
 	RequestDispatcher dispatcher;
 	private UserDao userDao;
-
+	
+	@Override
 	public void init() {
 		userDao = new UserDao();
 	}
-
+	
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		getAll(request, response);
 	}
-
+	
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 

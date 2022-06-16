@@ -27,18 +27,21 @@ public class SnakeController extends HttpServlet {
 	RequestDispatcher dispatcher;
 	private SnakeDao snakeDao;
 	private StoreDao storeDao;
-
+	
+	@Override
 	public void init() {
 		snakeDao = new SnakeDao();
 		storeDao = new StoreDao();
 	}
-
+	
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		getAll(request, response);
 	}
-
+	
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 

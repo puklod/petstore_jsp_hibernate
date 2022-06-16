@@ -20,14 +20,17 @@ public class LoginController extends HttpServlet {
 	
 	private UserDao userDao;
 	
+	@Override
 	public void init() {
 		userDao = new UserDao();
 	}
 	
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 	}
 	
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		if (request.getParameter("login") != null) {

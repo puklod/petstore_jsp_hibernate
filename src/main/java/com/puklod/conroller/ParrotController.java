@@ -27,18 +27,21 @@ public class ParrotController extends HttpServlet {
 	RequestDispatcher dispatcher;
 	private ParrotDao parrotDao;
 	private StoreDao storeDao;
-
+	
+	@Override
 	public void init() {
 		parrotDao = new ParrotDao();
 		storeDao = new StoreDao();
 	}
-
+	
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		getAll(request, response);
 	}
-
+	
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 

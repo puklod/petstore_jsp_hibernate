@@ -26,17 +26,20 @@ public class StoreController extends HttpServlet {
 
 	RequestDispatcher dispatcher;
 	private StoreDao storeDao;
-
+	
+	@Override
 	public void init() {
 		storeDao = new StoreDao();
 	}
-
+	
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		getAll(request, response);
 	}
-
+	
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 

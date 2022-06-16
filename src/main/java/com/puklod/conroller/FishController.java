@@ -27,18 +27,21 @@ public class FishController extends HttpServlet {
 	RequestDispatcher dispatcher;
 	private FishDao fishDao;
 	private StoreDao storeDao;
-
+	
+	@Override
 	public void init() {
 		fishDao = new FishDao();
 		storeDao = new StoreDao();
 	}
-
+	
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		getAll(request, response);
 	}
-
+	
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 

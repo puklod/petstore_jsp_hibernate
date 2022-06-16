@@ -18,6 +18,7 @@ private static SessionFactory factory;
 		super();
 	}
 	
+	@Override
 	public void init() {
 	
 		try {

@@ -12,10 +12,12 @@ import jakarta.servlet.http.HttpServletResponse;
 public class MappingController extends HttpServlet{
 private static final long serialVersionUID = 1L;
 	
+	@Override
 	public void init() {
 		
 	}
 	
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if(request.getServletPath().equals("/")) {
 			request.getRequestDispatcher("views/index.jsp").forward(request, response);

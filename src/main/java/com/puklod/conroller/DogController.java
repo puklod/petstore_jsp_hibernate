@@ -28,18 +28,21 @@ public class DogController extends HttpServlet {
 	RequestDispatcher dispatcher;
 	private DogDao dogDao;
 	private StoreDao storeDao;
-
+	
+	@Override
 	public void init() {
 		dogDao = new DogDao();
 		storeDao = new StoreDao();
 	}
-
+	
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		getAll(request, response);
 	}
-
+	
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
