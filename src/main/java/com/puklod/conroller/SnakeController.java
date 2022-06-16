@@ -148,14 +148,15 @@ public class SnakeController extends HttpServlet {
 	private Snake setEntity(HttpServletRequest request) {
 
 		Snake snake = new Snake();
-		int storeId = Integer.parseInt(request.getParameter("store"));
+		Store store = new Store();
+		store.setId(request.getParameter("store"));
 
 		snake.setId(request.getParameter("id"));
 		snake.setType(request.getParameter("type"));
 		snake.setColor(request.getParameter("color"));
 		snake.setSize(request.getParameter("size"));
 		snake.setIsVenomous(request.getParameter("isVenomous"));
-		snake.setStore(storeDao.get(storeId));
+		snake.setStore(storeDao.get(store.getId()));
 
 		return snake;
 	}

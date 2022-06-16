@@ -37,7 +37,7 @@ public class Store {
 		this.id = id;
 	}
 	public void setId(String id) {
-		if(id != null) {
+		if(id != null && !id.equals("")) {
 			this.id = Integer.parseInt(id);
 		}
 	}

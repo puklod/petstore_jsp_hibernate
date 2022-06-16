@@ -148,7 +148,8 @@ public class ParrotController extends HttpServlet {
 	private Parrot setEntity(HttpServletRequest request) {
 
 		Parrot parrot = new Parrot();
-		int storeId = Integer.parseInt(request.getParameter("store"));
+		Store store = new Store();
+		store.setId(request.getParameter("store"));
 
 		parrot.setId(request.getParameter("id"));
 		parrot.setType(request.getParameter("type"));
@@ -156,7 +157,7 @@ public class ParrotController extends HttpServlet {
 		parrot.setSize(request.getParameter("size"));
 		parrot.setCageSizeRequirment(request.getParameter("cageSizeRequirment"));
 		parrot.setCanTalk(request.getParameter("canTalk"));
-		parrot.setStore(storeDao.get(storeId));
+		parrot.setStore(storeDao.get(store.getId()));
 
 		return parrot;
 	}

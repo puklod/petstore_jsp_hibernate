@@ -148,14 +148,15 @@ public class FishController extends HttpServlet {
 	private Fish setEntity(HttpServletRequest request) {
 
 		Fish fish = new Fish();
-		int storeId = Integer.parseInt(request.getParameter("store"));
+		Store store = new Store();
+		store.setId(request.getParameter("store"));
 
 		fish.setId(request.getParameter("id"));
 		fish.setType(request.getParameter("type"));
 		fish.setColor(request.getParameter("color"));
 		fish.setSize(request.getParameter("size"));
 		fish.setTankSizeRequirment(request.getParameter("tankSizeRequirment"));
-		fish.setStore(storeDao.get(storeId));
+		fish.setStore(storeDao.get(store.getId()));
 
 		return fish;
 	}

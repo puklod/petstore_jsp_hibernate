@@ -154,7 +154,8 @@ public class DogController extends HttpServlet {
 	private Dog setEntity(HttpServletRequest request) {
 
 		Dog dog = new Dog();
-		int storeId = Integer.parseInt(request.getParameter("store"));
+		Store store = new Store();
+		store.setId(request.getParameter("store"));
 
 		dog.setId(request.getParameter("id"));
 		dog.setAge(request.getParameter("age"));
@@ -162,7 +163,7 @@ public class DogController extends HttpServlet {
 		dog.setFurColor(request.getParameter("furColor"));
 		dog.setFurLength(request.getParameter("furLength"));
 		dog.setSize(request.getParameter("size"));
-		dog.setStore(storeDao.get(storeId));
+		dog.setStore(storeDao.get(store.getId()));
 
 		return dog;
 	}

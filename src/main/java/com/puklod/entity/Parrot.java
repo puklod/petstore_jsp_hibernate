@@ -28,7 +28,7 @@ public class Parrot extends Bird{
 	
 	public void validate() throws RequiredFieldEmptyException {
 		if (this.getType().equals("") || this.getType() == null) {
-			throw new RequiredFieldEmptyException("Egy kötelező mező nincs kitöltve");
+			throw new RequiredFieldEmptyException("Egy kötelező mező nincs kitöltve!");
 		}
 	}
 

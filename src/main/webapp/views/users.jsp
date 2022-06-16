@@ -112,6 +112,7 @@
 								
 									<tr>
 										<th>
+											<input type="hidden" class="form-control" name="id" value="0"/>
 											<input type="text" class="form-control" name="userName">
 										</th>
 										
@@ -275,7 +276,7 @@
 			} else {
 				form.addEventListener('submit', e => {
 					e.preventDefault();
-					location.reload();
+					window.location.href = window.location.href;
 				});
 			}
 		}													

@@ -140,7 +140,7 @@ public class UserController extends HttpServlet {
 		user.setPrivileg(request.getParameter("privileg"));
 		
 		if(isUserExistsInTheDatabase(user)) {
-			throw new ExistingUserException("Az adott felhasználónév már foglalt");
+			throw new ExistingUserException("Az adott felhasználónév már foglalt!");
 		}
 	
 		return user;

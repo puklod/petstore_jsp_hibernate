@@ -345,7 +345,7 @@
 			} else {
 				form.addEventListener('submit', e => {
 					e.preventDefault();
-					location.reload();
+					window.location.href = window.location.href;
 				});
 			}
 		}													
